@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"declaration": true,
+		"declarationDir": "typings",
+		"removeComments": false,
+		"alwaysStrict": true,
+		"pretty": true,
+		"target": "es6",
+		"sourceMap": true,
+		"inlineSources": true,
+		"rootDir": "src",
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"downlevelIteration": true
+	}
+}

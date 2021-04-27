@@ -9,11 +9,9 @@ npm-debug.log*
 
 # Runtime data
 pids
-*.pid 
+*.pid
 *.seed
 
 # Miscellaneous
 .tmp/
-dist
-typings
-docs
+docs/

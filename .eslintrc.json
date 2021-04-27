@@ -1,0 +1,7 @@
+{
+	"extends": "marine/prettier/node",
+	"root": true,
+	"rules": {
+		"valid-jsdoc": "error"
+	}
+}
