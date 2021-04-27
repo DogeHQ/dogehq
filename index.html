@@ -68,7 +68,71 @@
 				<a href="#dogehq" id="dogehq" style="color: inherit; text-decoration: none;">
 					<h1>dogehq</h1>
 				</a>
-				<p>A wrapper for the DogeHouse Kebab API Client.</p>
+				<blockquote>
+					<p>API Wrapper for <a href="https://npmjs.com/package/@dogehouse/kebab">@dogehouse/kebab</a></p>
+				</blockquote>
+				<div align="center">
+					<p>
+						<a href="https://www.npmjs.com/package/dogehq"><img src="https://img.shields.io/npm/v/dogehq.svg?maxAge=3600" alt="NPM version" /></a>
+						<a href="https://www.npmjs.com/package/dogehq"><img src="https://img.shields.io/npm/dt/dogehq?maxAge=3600" alt="NPM downloads" /></a>
+						<a href="https://david-dm.org/Shukaaku/dogehq"><img src="https://david-dm.org/Shukaaku/dogehq/status.svg?maxAge=3600" alt="Dependencies" /></a>
+					</p>
+					<p>
+						<a href="https://nodei.co/npm/dogehq/"><img src="https://nodei.co/npm/dogehq.png?downloads=true&stars=true" alt="NPM info" /></a>
+					</p>
+				</div>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
+				<ul>
+					<li>Actually maintained</li>
+					<li>Supports bot creation</li>
+					<li>Uses async/await</li>
+					<li>Uses <a href="https://npmjs.com/package/@discordjs/collection">@discordjs/collection</a> to store users, rooms, etc.</li>
+					<li>Typescript support</li>
+				</ul>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h2>Install</h2>
+				</a>
+				<pre><code class="language-bash"><span style="color: #000000">yarn add dogehq</span>
+</code></pre>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h2>Documentation</h2>
+				</a>
+				<p><a href="https://shukaaku.github.io/dogehq">https://shukaaku.github.io/dogehq</a></p>
+				<a href="#support" id="support" style="color: inherit; text-decoration: none;">
+					<h2>Support</h2>
+				</a>
+				<p><a href="https://discord.gg/ZrrAQ3HAdK">https://discord.gg/ZrrAQ3HAdK</a></p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Client</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;dogehq&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Client</span><span style="color: #000000">();</span>
+
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ready&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Logged in as </span><span style="color: #0000FF">${</span><span style="color: #001080">client</span><span style="color: #000000FF">.</span><span style="color: #001080">user</span><span style="color: #000000FF">.</span><span style="color: #001080">username</span><span style="color: #0000FF">}</span><span style="color: #A31515"> (</span><span style="color: #0000FF">${</span><span style="color: #001080">client</span><span style="color: #000000FF">.</span><span style="color: #001080">user</span><span style="color: #000000FF">.</span><span style="color: #001080">id</span><span style="color: #0000FF">}</span><span style="color: #A31515">).`</span><span style="color: #000000">));</span>
+
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">login</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;token&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;accessToken&#039;</span><span style="color: #000000">);</span>
+</code></pre>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<ol>
+					<li>Fork it!</li>
+					<li>Create your feature branch: <code>git checkout -b my-new-feature</code></li>
+					<li>Commit your changes: <code>git commit -am &#39;Add some feature&#39;</code></li>
+					<li>Push to the branch: <code>git push origin my-new-feature</code></li>
+					<li>Submit a pull request :D</li>
+				</ol>
+				<a href="#author" id="author" style="color: inherit; text-decoration: none;">
+					<h2>Author</h2>
+				</a>
+				<p><strong>dogehq</strong> © <a href="https://github.com/1chiSensei">1chiSensei</a>, Released under the <a href="https://github.com/Shukaaku/dogehq/blob/main/LICENSE">Apache-2.0</a> License.<br>
+				Authored and maintained by 1chiSensei.</p>
+				<blockquote>
+					<p>GitHub <a href="https://github.com/1chiSensei">@1chiSensei</a></p>
+				</blockquote>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
