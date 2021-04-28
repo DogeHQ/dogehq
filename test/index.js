@@ -4,9 +4,9 @@ const { Client } = require('../dist/index');
 const client = new Client();
 
 client.on('ready', async () => {
-	console.log('ready');
-
 	await client.rooms.first().join();
+
+	console.log('ready');
 });
 
 client.on('userLeave', console.log);

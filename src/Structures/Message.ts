@@ -1,4 +1,4 @@
-import { Message as MessageInfo, tokensToString, User as UserInfo, stringToToken } from '@dogehouse/kebab';
+import { Message as MessageInfo, tokensToString, stringToToken } from '@dogehouse/kebab';
 import { User, UUID } from './User';
 import { Client } from './Client';
 
@@ -72,13 +72,7 @@ export class Message {
 		this.deleterId = message.deleterId;
 		this.sentAt = message.sentAt;
 		this.isWhisper = message.isWhisper;
-
-		client.wrapper.query.search(message.username).then(({ items }) => {
-			const item = items[0] as UserInfo;
-
-			this.author = new User(client, item);
-			client.users.set(this.id, this.author);
-		});
+		this.author = client.users.get(message.userId) as User;
 	}
 
 	/**
@@ -87,7 +81,7 @@ export class Message {
 	 */
 	public async reply(content: string): Promise<void> {
 		await this.client.wrapper.mutation.sendRoomChatMsg(
-			stringToToken(`@${this.author.displayName}, ${content}`),
+			stringToToken(`@${this.author.displayName} , ${content}`),
 		);
 	}
 

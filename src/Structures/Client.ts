@@ -74,7 +74,7 @@ export class Client extends EventEmitter<{
 	 * The top public rooms.
 	 * @type {Collection<string, Room>}
 	 */
-	public rooms: Collection<string, Room>;
+	public rooms!: Collection<string, Room>;
 
 	/**
 	 * The users.
@@ -102,8 +102,6 @@ export class Client extends EventEmitter<{
 
 	public constructor() {
 		super();
-
-		this.rooms = new Collection<string, Room>();
 	}
 
 	/**
@@ -122,13 +120,17 @@ export class Client extends EventEmitter<{
 		});
 
 		this.user = new ClientUser(this);
+		this.rooms = new Collection<string, Room>();
+		this.users = new Collection<string, User>();
 		this.wrapper = wrap(this.connection);
 		this.wrapper.subscribe.newChatMsg(async (data) => {
 			await this.emit('message', new Message(this, data.msg));
 		});
-		this.wrapper.subscribe.userJoinRoom(
-			async ({ user }) => await this.emit('userJoin', new User(this, user)),
-		);
+		this.wrapper.subscribe.userJoinRoom(async ({ user }) => {
+			const useR = new User(this, user);
+			await this.emit('userJoin', useR);
+			this.users.set(useR.id, useR);
+		});
 		this.wrapper.subscribe.userLeaveRoom(
 			async ({ userId, roomId }) =>
 				await this.emit('userLeave', [this.users.get(userId), this.rooms.get(roomId)]),

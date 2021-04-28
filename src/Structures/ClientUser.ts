@@ -15,7 +15,7 @@ export interface ProfileData {
 
 export interface RoomData {
 	name: string;
-	privacy: string;
+	privacy: 'public' | 'private';
 	description: string;
 }
 

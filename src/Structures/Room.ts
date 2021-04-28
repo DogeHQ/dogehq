@@ -1,4 +1,4 @@
-import { stringToToken, Room as RoomInfo } from '@dogehouse/kebab';
+import { stringToToken, Room as RoomInfo, JoinRoomAndGetInfoResponse } from '@dogehouse/kebab';
 import { Collection } from './Collection';
 import { Client } from './Client';
 import { User } from './User';
@@ -166,9 +166,12 @@ export class Room {
 	 * Joins the room.
 	 */
 	public async join(): Promise<void> {
-		await this.client.wrapper.query.joinRoomAndGetInfo(this.id);
+		const { users } = (await this.client.wrapper.query.joinRoomAndGetInfo(
+			this.id,
+		)) as JoinRoomAndGetInfoResponse;
 
 		await this.client.emit('joinRoom', this);
+		for (const user of users) this.client.users.set(user.id, new User(this.client, user));
 	}
 
 	/**

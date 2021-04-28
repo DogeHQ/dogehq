@@ -1,4 +1,4 @@
-import { User as UserInfo, Room as RoomInfo } from '@dogehouse/kebab';
+import { User as UserInfo, Room as RoomInfo, RoomUser } from '@dogehouse/kebab';
 import { Client } from './Client';
 
 export type UUID = string;
@@ -17,9 +17,9 @@ export class User {
 
 	/**
 	 * If the user follows you.
-	 * @type {boolean|undefined}
+	 * @type {?boolean}
 	 */
-	public following?: boolean;
+	public following: boolean | null;
 
 	/**
 	 * The username of the user.
@@ -65,9 +65,9 @@ export class User {
 
 	/**
 	 * Whether the user follows you.
-	 * @type {boolean}
+	 * @type {?boolean}
 	 */
-	public followsYou?: boolean;
+	public followsYou: boolean | null;
 
 	/**
 	 * The display name of the user.
@@ -77,15 +77,15 @@ export class User {
 
 	/**
 	 * The current room id of the user.
-	 * @type {UUID|undefined}
+	 * @type {?UUID}
 	 */
-	public currentRoomId?: UUID;
+	public currentRoomId: UUID | null;
 
 	/**
 	 * The current room of the user.
-	 * @type {RoomInfo}
+	 * @type {RoomInfo|undefined}
 	 */
-	public currentRoom: RoomInfo;
+	public currentRoom?: RoomInfo;
 
 	/**
 	 * The bio of the user.
@@ -105,10 +105,11 @@ export class User {
 	 */
 	public bannerUrl: string | null;
 
-	public constructor(client: Client, user: UserInfo) {
+	public constructor(client: Client, user: UserInfo | RoomUser) {
 		this.client = client;
 
-		this.following = user.followsYou || undefined;
+		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+		this.following = user?.youAreFollowing ?? false;
 		this.username = user.username;
 		this.roomPermissions = user.roomPermissions;
 		this.online = user.online;
@@ -116,10 +117,10 @@ export class User {
 		this.followers = user.numFollowers;
 		this.lastOnline = user.lastOnline;
 		this.id = user.id;
-		this.followsYou = user.followsYou || undefined;
+		this.followsYou = user.followsYou ? user.followsYou : null;
 		this.displayName = user.displayName;
 		this.currentRoom = user.currentRoom;
-		this.currentRoomId = user.currentRoomId || undefined;
+		this.currentRoomId = user.currentRoom?.id ? user.currentRoom.id : null;
 		this.bio = user.bio;
 		this.avatarUrl = user.avatarUrl;
 		this.bannerUrl = user.bannerUrl;
