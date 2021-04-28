@@ -6,6 +6,6 @@
 		"@typescript-eslint/no-misused-promises": "off",
 		"@typescript-eslint/no-floating-promises": "off",
 		"no-return-await": "off",
-		"@typescript-eslint/prefer-nullish-coalesing": "off"
+		"@typescript-eslint/prefer-nullish-coalescing": "off"
 	}
 }
