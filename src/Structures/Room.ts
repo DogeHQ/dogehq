@@ -181,13 +181,11 @@ export class Room {
 
 	/**
 	 * Bans a user from the room.
-	 * @param {string} username - The name of the user that you want to ban.
-	 * @param {string} [reason] - The reason why you want to ban the user.
+	 * @param {string} userId - The id of the user.
+	 * @param {boolean} [shouldBanIp] - If you want to ip ban.
 	 */
-	public ban(username: string, reason?: string): void {
-		if (typeof reason === 'undefined') reason = 'No reason provided.';
-
-		this.client.wrapper.mutation.ban(username, reason);
+	public ban(userId: string, shouldBanIp?: boolean): void {
+		this.client.wrapper.mutation.roomBan(userId, shouldBanIp ? shouldBanIp : false);
 	}
 
 	/**
@@ -229,9 +227,10 @@ export class Room {
 	/**
 	 * Blocks a user from the room.
 	 * @param {string} userId - The id of the user.
+	 * @param {string} [reason] - The reason.
 	 */
-	public async block(userId: string): Promise<void> {
-		await this.client.wrapper.mutation.blockFromRoom(userId);
+	public block(userId: string, reason?: string): void {
+		this.client.wrapper.mutation.ban(userId, reason ? reason : 'No reason provided.');
 	}
 
 	/**

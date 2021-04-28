@@ -1,8 +1,7 @@
-import { raw, wrap, Wrapper, InvitationToRoomResponse } from '@dogehouse/kebab';
-import { baseUrl, authUrl } from '../Util/Constants';
+import { raw, wrap, Wrapper, InvitationToRoomResponse, http } from '@dogehouse/kebab';
+import { baseUrl } from '../Util/Constants';
 import { Collection } from './Collection';
 import { ClientUser } from './ClientUser';
-import request from 'node-superfetch';
 import { Message } from './Message';
 import EventEmitter from 'emittery';
 import { Room } from './Room';
@@ -15,8 +14,9 @@ export interface CreateBotResponse {
 }
 
 export interface BotCredentials {
-	token: string;
+	accessToken: string;
 	refreshToken: string;
+	username: string;
 }
 
 /**
@@ -163,19 +163,7 @@ export class Client extends EventEmitter<{
 	 * @returns {Promise<BotCredentials>} The bot credentials.
 	 */
 	public async getBotCredentials(apiKey: string): Promise<BotCredentials> {
-		const { body } = ((await request
-			.post(authUrl)
-			.set({
-				/* eslint-disable */
-				'Content-Type': 'application/json',
-				'User-Agent': 'DogeHQ <https://github.com/Shukaaku/dogehq>' /* eslint-enable */,
-			})
-			.send(JSON.stringify({ apiKey }))) as unknown) as Record<string, any>;
-
-		const data = {
-			token: body.accessToken,
-			refreshToken: body.refreshToken,
-		};
+		const data = await http.bot.auth(apiKey);
 
 		return data;
 	}

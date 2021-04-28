@@ -16,3 +16,4 @@ pids
 # Miscellaneous
 .tmp/
 docs/
+.yarn/

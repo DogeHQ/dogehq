@@ -1,5 +1,6 @@
 import { JoinRoomAndGetInfoResponse, Room as RoomInfo, ScheduledRoom as ScheduledRoomInfo } from '@dogehouse/kebab';
 import { ScheduledRoom } from './ScheduledRoom';
+import { isIso } from '../Util/Util';
 import { Client } from './Client';
 import { User } from './User';
 import { Room } from './Room';
@@ -64,6 +65,8 @@ export class ClientUser extends User {
 	 */
 	public async createScheduledRoom(data: ScheduledRoomData): Promise<ScheduledRoom> {
 		const info = (await this.client.wrapper.mutation.createScheduledRoom(data)) as ScheduledRoomInfo;
+
+		if (!isIso(data.scheduledFor)) throw new Error('The "scheduledFor" parameter has to be ISO formatted!');
 
 		return new ScheduledRoom(this.client, info);
 	}

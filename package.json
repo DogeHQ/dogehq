@@ -1,41 +1,56 @@
 {
 	"name": "dogehq",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "A wrapper for the DogeHouse Kebab API Client.",
 	"main": "./dist/index.js",
 	"types": "./typings/",
-	"repository": "https://github.com/Shukaaku/dogehq.git",
-	"author": "1chiSensei <mail@1chi.tk>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Shukaaku/dogehq.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Shukaaku/dogehq/issues"
+	},
+	"keywords": [
+		"dogehouse",
+		"doge",
+		"kebab",
+		"wrapper",
+		"dog",
+		"dogehouse kebab"
+	],
+	"homepage": "https://shukaaku.github.io/dogehq",
+	"author": {
+		"name": "1chi",
+		"email": "mail@1chi.tk"
+	},
 	"license": "Apache-2.0",
-	"private": false,
 	"scripts": {
 		"docs": "rimraf docs && typedoc ./src/index.ts --theme ./node_modules/typedoc-vortex-theme/bin/default",
 		"build": "tsc",
 		"lint": "eslint . --fix",
 		"prettier": "prettier . --write"
 	},
+	"files": [
+		"dist",
+		"typings"
+	],
 	"dependencies": {
 		"@discordjs/collection": "^0.1.6",
-		"@dogehouse/kebab": "^0.2.7",
-		"emittery": "^0.8.1",
-		"node-superfetch": "^0.2.2"
+		"@dogehouse/kebab": "^0.2.8",
+		"emittery": "^0.8.1"
 	},
 	"devDependencies": {
-		"@types/node": "^14.14.41",
+		"@types/node": "^15.0.1",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",
 		"@typescript-eslint/parser": "^4.22.0",
 		"eslint": "^7.25.0",
 		"eslint-config-marine": "^8.3.2",
 		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-prettier": "^3.4.0",
 		"prettier": "^2.2.1",
 		"rimraf": "^3.0.2",
 		"typedoc": "^0.20.36",
 		"typedoc-vortex-theme": "^0.0.2",
 		"typescript": "^4.2.4"
-	},
-	"files": [
-		"dist",
-		"typings"
-	]
+	}
 }
