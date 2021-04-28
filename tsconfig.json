@@ -4,16 +4,16 @@
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"declaration": true,
-		"declarationDir": "typings",
 		"removeComments": false,
 		"alwaysStrict": true,
 		"pretty": true,
-		"target": "es6",
+		"target": "es2017",
 		"sourceMap": true,
 		"inlineSources": true,
 		"rootDir": "src",
 		"outDir": "dist",
 		"esModuleInterop": true,
-		"downlevelIteration": true
+		"downlevelIteration": true,
+		"importHelpers": true
 	}
 }

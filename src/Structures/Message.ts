@@ -73,13 +73,12 @@ export class Message {
 		this.sentAt = message.sentAt;
 		this.isWhisper = message.isWhisper;
 
-		void client.wrapper.query.search(message.username).then(({ items }) => {
+		client.wrapper.query.search(message.username).then(({ items }) => {
 			const item = items[0] as UserInfo;
 
 			this.author = new User(client, item);
+			client.users.set(this.id, this.author);
 		});
-
-		client.users.set(this.id, this.author);
 	}
 
 	/**

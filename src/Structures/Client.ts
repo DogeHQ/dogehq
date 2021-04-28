@@ -98,13 +98,12 @@ export class Client extends EventEmitter<{
 	 * The client user.
 	 * @type {?ClientUser}
 	 */
-	public user: ClientUser | null;
+	public user!: ClientUser | null;
 
 	public constructor() {
 		super();
 
 		this.rooms = new Collection<string, Room>();
-		this.user = new ClientUser(this);
 	}
 
 	/**
@@ -122,18 +121,22 @@ export class Client extends EventEmitter<{
 			url: baseUrl,
 		});
 
-		await this.emit('ready', this);
+		this.user = new ClientUser(this);
 		this.wrapper = wrap(this.connection);
-		this.wrapper.subscribe.newChatMsg((data) => {
-			void this.emit('message', new Message(this, data.msg));
+		this.wrapper.subscribe.newChatMsg(async (data) => {
+			await this.emit('message', new Message(this, data.msg));
 		});
-		this.wrapper.subscribe.userJoinRoom(({ user }) => void this.emit('userJoin', new User(this, user)));
-		this.wrapper.subscribe.userLeaveRoom(
-			({ userId, roomId }) =>
-				void this.emit('userLeave', [this.users.get(userId), this.rooms.get(roomId)]),
+		this.wrapper.subscribe.userJoinRoom(
+			async ({ user }) => await this.emit('userJoin', new User(this, user)),
 		);
-		this.wrapper.subscribe.handRaised(({ userId }) => void this.emit('handRaised', this.users.get(userId)));
-		this.wrapper.subscribe.invitationToRoom((data) => void this.emit('invite', data));
+		this.wrapper.subscribe.userLeaveRoom(
+			async ({ userId, roomId }) =>
+				await this.emit('userLeave', [this.users.get(userId), this.rooms.get(roomId)]),
+		);
+		this.wrapper.subscribe.handRaised(
+			async ({ userId }) => await this.emit('handRaised', this.users.get(userId)),
+		);
+		this.wrapper.subscribe.invitationToRoom(async (data) => await this.emit('invite', data));
 		this.token = token;
 		this.refreshToken = refreshToken;
 
@@ -142,6 +145,7 @@ export class Client extends EventEmitter<{
 		rooms.forEach((room) => {
 			this.rooms.set(room.id, new Room(this, room));
 		});
+		await this.emit('ready', this);
 	}
 
 	/**

@@ -108,7 +108,7 @@ export class User {
 	public constructor(client: Client, user: UserInfo) {
 		this.client = client;
 
-		this.following = user.followsYou;
+		this.following = user.followsYou || undefined;
 		this.username = user.username;
 		this.roomPermissions = user.roomPermissions;
 		this.online = user.online;
@@ -116,10 +116,10 @@ export class User {
 		this.followers = user.numFollowers;
 		this.lastOnline = user.lastOnline;
 		this.id = user.id;
-		this.followsYou = user.followsYou;
+		this.followsYou = user.followsYou || undefined;
 		this.displayName = user.displayName;
 		this.currentRoom = user.currentRoom;
-		this.currentRoomId = user.currentRoomId;
+		this.currentRoomId = user.currentRoomId || undefined;
 		this.bio = user.bio;
 		this.avatarUrl = user.avatarUrl;
 		this.bannerUrl = user.bannerUrl;
