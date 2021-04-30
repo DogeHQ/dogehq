@@ -1,15 +1,15 @@
 {
 	"name": "dogehq",
-	"version": "1.5.0",
+	"version": "1.6.0",
 	"description": "A wrapper for the DogeHouse Kebab API Client.",
 	"main": "./dist/index.js",
 	"types": "./dist/",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Shukaaku/dogehq.git"
+		"url": "git+https://github.com/DogeHQ/dogehq.git"
 	},
 	"bugs": {
-		"url": "https://github.com/Shukaaku/dogehq/issues"
+		"url": "https://github.com/DogeHQ/dogehq/issues"
 	},
 	"keywords": [
 		"dogehouse",
@@ -19,7 +19,7 @@
 		"dog",
 		"dogehouse kebab"
 	],
-	"homepage": "https://shukaaku.github.io/dogehq",
+	"homepage": "https://dogehq.1chi.tk",
 	"author": {
 		"name": "1chi",
 		"email": "mail@1chi.tk"
@@ -36,7 +36,6 @@
 		"dist"
 	],
 	"dependencies": {
-		"@discordjs/collection": "^0.1.6",
 		"@dogehouse/kebab": "^0.2.8",
 		"eventemitter3": "^4.0.7"
 	},

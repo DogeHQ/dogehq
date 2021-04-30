@@ -29,7 +29,7 @@ yarn add dogehq
 
 ## Documentation
 
-https://shukaaku.github.io/dogehq
+https://dogehq.1chi.tk
 
 ## Support
 

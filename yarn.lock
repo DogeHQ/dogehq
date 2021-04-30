@@ -32,13 +32,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discordjs/collection@npm:^0.1.6":
-  version: 0.1.6
-  resolution: "@discordjs/collection@npm:0.1.6"
-  checksum: da87faf9975e9320a4aa5e8a78312849e4767eb5b0c3348612a0f2d07b5bad4bb91c8c65a5a8ffecc007574c5eebd4790d2e13880af6fd2ae865ba3161495f9a
-  languageName: node
-  linkType: hard
-
 "@dogehouse/kebab@npm:^0.2.8":
   version: 0.2.8
   resolution: "@dogehouse/kebab@npm:0.2.8"
@@ -520,7 +513,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dogehq@workspace:."
   dependencies:
-    "@discordjs/collection": ^0.1.6
     "@dogehouse/kebab": ^0.2.8
     "@types/node": ^15.0.1
     "@typescript-eslint/eslint-plugin": ^4.22.0
