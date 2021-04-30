@@ -16,7 +16,7 @@ pids
 .tmp/
 dist
 typings
-docs
+public
 test/config.js
 
 # yarn v2

@@ -454,6 +454,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"compare-versions@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "compare-versions@npm:3.6.0"
+  checksum: 09525264502bda1f6667ad2429eaf5520b543d997e79e7a94b66a5896df8921cdc3a97140dfff75af6c9ba1859c872de1921c3cf8a6c48ed807bbf9f582cf093
+  languageName: node
+  linkType: hard
+
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
@@ -527,7 +534,7 @@ __metadata:
     rimraf: ^3.0.2
     tslib: ^2.2.0
     typedoc: ^0.20.36
-    typedoc-vortex-theme: ^0.0.2
+    typedoc-plugin-pages-fork: ^0.0.1
     typescript: ^4.2.4
   languageName: unknown
   linkType: soft
@@ -1211,7 +1218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lunr@npm:^2.3.9":
+"lunr@npm:^2.3.8, lunr@npm:^2.3.9":
   version: 2.3.9
   resolution: "lunr@npm:2.3.9"
   checksum: a2b66320c2f6632322b91c43621eed9e623c0f1b81e7c2d74c238884a02229698baa4478bd238e9b32d7abf0db5ae9233b311c28e1edbcc481774e1ce83bec6f
@@ -1735,6 +1742,15 @@ resolve@^1.1.6:
   languageName: node
   linkType: hard
 
+"typedoc-default-themes@npm:^0.10.1":
+  version: 0.10.2
+  resolution: "typedoc-default-themes@npm:0.10.2"
+  dependencies:
+    lunr: ^2.3.8
+  checksum: 8766471937395067504b3f21edd8c9f89e6901c2912aff0b4371a5dfceea31e4a1f9d08282c2998d0bc0a70e3d6943b3043ebe90e6b11dfdaf52c4a05e32d980
+  languageName: node
+  linkType: hard
+
 "typedoc-default-themes@npm:^0.12.10":
   version: 0.12.10
   resolution: "typedoc-default-themes@npm:0.12.10"
@@ -1742,10 +1758,13 @@ resolve@^1.1.6:
   languageName: node
   linkType: hard
 
-"typedoc-vortex-theme@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "typedoc-vortex-theme@npm:0.0.2"
-  checksum: 575f7c74ae73ce5c35fa99031bca2eb5745f45c3548833aea4ebfbf2a57e872039fec842e43d98c165c6875d1c84adbe3db6d1a1811c3ebaf0fedde663e35ada
+"typedoc-plugin-pages-fork@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "typedoc-plugin-pages-fork@npm:0.0.1"
+  dependencies:
+    compare-versions: ^3.6.0
+    typedoc-default-themes: ^0.10.1
+  checksum: 4f706abe6519ffd7fbf6796439dc0c5c11c84469b2f37bfc0b552be51e82209002fabb8bb349c18019d5bdc1989038485947ccd210f9fa57a8079108cb58febc
   languageName: node
   linkType: hard
 

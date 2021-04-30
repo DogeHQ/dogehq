@@ -1,0 +1,6 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"out": "public",
+	"entryPoints": ["src/index.ts"],
+	"theme": "pages-plugin"
+}

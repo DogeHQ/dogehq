@@ -1,0 +1,17 @@
+{
+	"groups": [
+		{
+			"title": "Getting Started",
+			"pages": [
+				{
+					"title": "Installing",
+					"source": "./docs/INSTALLING.md"
+				},
+				{
+					"title": "Example Bot",
+					"source": "./docs/EXAMPLE.md"
+				}
+			]
+		}
+	]
+}

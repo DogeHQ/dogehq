@@ -1,6 +1,6 @@
 {
 	"name": "dogehq",
-	"version": "1.4.1",
+	"version": "1.5.0",
 	"description": "A wrapper for the DogeHouse Kebab API Client.",
 	"main": "./dist/index.js",
 	"types": "./dist/",
@@ -26,7 +26,7 @@
 	},
 	"license": "Apache-2.0",
 	"scripts": {
-		"docs": "rimraf docs && typedoc ./src/index.ts --theme ./node_modules/typedoc-vortex-theme/bin/default",
+		"docs": "rimraf public && typedoc",
 		"build": "tsc",
 		"lint": "eslint . --fix",
 		"prettier": "prettier . --write",
@@ -52,7 +52,7 @@
 		"rimraf": "^3.0.2",
 		"tslib": "^2.2.0",
 		"typedoc": "^0.20.36",
-		"typedoc-vortex-theme": "^0.0.2",
+		"typedoc-plugin-pages-fork": "^0.0.1",
 		"typescript": "^4.2.4"
 	}
 }

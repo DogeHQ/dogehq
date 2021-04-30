@@ -1,3 +1,4 @@
 dist/
 typings/
-docs/
+public/
+.yarn/
