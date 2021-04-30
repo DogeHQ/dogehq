@@ -10,3 +10,4 @@ export * from './Structures/Message';
 // Utils
 export * from './Util/Constants';
 export * from './Util/Util';
+export * from './Util/TypedEmitter';
