@@ -1,6 +1,6 @@
 {
 	"name": "dogehq",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "A wrapper for the DogeHouse Kebab API Client.",
 	"main": "./dist/index.js",
 	"types": "./dist/",
@@ -19,7 +19,7 @@
 		"dog",
 		"dogehouse kebab"
 	],
-	"homepage": "https://dogehq.1chi.tk",
+	"homepage": "https://dogehq.js.org",
 	"author": {
 		"name": "1chi",
 		"email": "mail@1chi.tk"
