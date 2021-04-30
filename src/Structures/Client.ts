@@ -29,6 +29,8 @@ export interface ClientEvents {
 	invite: (invite: InvitationToRoomResponse) => void;
 	joinRoom: (room: Room) => void;
 	leaveRoom: (room: Room) => void;
+	raw: (data: string) => void;
+	error: (error: Error) => void;
 }
 
 /**
@@ -117,12 +119,25 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 		if (!token || !refreshToken) throw new Error('The token and/or the access token is required!');
 
 		this.connection = await raw.connect(token, refreshToken, {
-			onConnectionTaken() {
+			onConnectionTaken: () => {
 				throw new Error('You can only login on only one account at the same time.');
+			},
+			logger: (direction, opcode, _, fetchId, raw) => {
+				const directionPadded = direction.toUpperCase().padEnd(3, ' ');
+				const fetchIdInfo = fetchId ? ` (fetch id ${fetchId})` : '';
+
+				this.emit('raw', `${directionPadded} "${opcode}"${fetchIdInfo}: ${raw ?? ''}`);
+			},
+			onClearTokens: () => {
+				const err = new Error(
+					"Oh no. An error occured. Your token may be wrong or you're trying to access something that you don't have access to.",
+				);
+
+				this.emit('error', err);
+				throw err;
 			},
 			url: baseUrl,
 		});
-
 		this.user = new ClientUser(this);
 		this.rooms = new Collection<string, Room>();
 		this.users = new Collection<string, User>();

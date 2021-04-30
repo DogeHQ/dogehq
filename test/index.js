@@ -11,7 +11,11 @@ client.on('ready', async () => {
 
 client.on('message', (msg) => console.log(msg.content));
 
+// client.on('raw', console.log);
+
 client.on('userLeave', console.log);
+
+client.on('error', console.error);
 
 client.on('userJoin', console.log);
 
