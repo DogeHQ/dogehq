@@ -1,6 +1,6 @@
 {
 	"name": "dogehq",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "A wrapper for the DogeHouse Kebab API Client.",
 	"main": "./dist/index.js",
 	"types": "./dist/",
