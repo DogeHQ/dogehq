@@ -9,6 +9,8 @@ client.on('ready', async () => {
 	console.log('ready');
 });
 
+client.on('message', (msg) => console.log(msg.content));
+
 client.on('userLeave', console.log);
 
 client.on('userJoin', console.log);

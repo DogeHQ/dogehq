@@ -1,9 +1,10 @@
 import { raw, wrap, Wrapper, InvitationToRoomResponse, http } from '@dogehouse/kebab';
+import { TypedEventEmitter } from '../Util/TypedEmitter';
 import { baseUrl } from '../Util/Constants';
 import { Collection } from './Collection';
 import { ClientUser } from './ClientUser';
 import { Message } from './Message';
-import EventEmitter from 'emittery';
+import EventEmitter from 'eventemitter3';
 import { Room } from './Room';
 import { User } from './User';
 
@@ -19,6 +20,17 @@ export interface BotCredentials {
 	username: string;
 }
 
+export interface ClientEvents {
+	ready: () => void;
+	userJoin: (user?: User) => void;
+	message: (message: Message) => void;
+	userLeave: (user?: User, room?: Room) => void;
+	handRaised: (user?: User) => void;
+	invite: (invite: InvitationToRoomResponse) => void;
+	joinRoom: (room: Room) => void;
+	leaveRoom: (room: Room) => void;
+}
+
 /**
  * The main client class.
  * @extends {EventEmitter}
@@ -31,15 +43,7 @@ export interface BotCredentials {
  * client.login('token', 'accessToken');
  * ```
  */
-export class Client extends EventEmitter<{
-	ready: Client;
-	message: Message;
-	joinRoom: Room;
-	userJoin: User;
-	userLeave: [User | undefined, Room | undefined];
-	handRaised: User | undefined;
-	invite: InvitationToRoomResponse;
-}> {
+export class Client extends ((EventEmitter as any) as new () => TypedEventEmitter<ClientEvents>) {
 	/**
 	 * The timeouts.
 	 * @type {Set<NodeJS.Timeout>}
@@ -123,21 +127,18 @@ export class Client extends EventEmitter<{
 		this.rooms = new Collection<string, Room>();
 		this.users = new Collection<string, User>();
 		this.wrapper = wrap(this.connection);
-		this.wrapper.subscribe.newChatMsg(async (data) => {
-			await this.emit('message', new Message(this, data.msg));
+		this.wrapper.subscribe.newChatMsg((data) => {
+			this.emit('message', new Message(this, data.msg));
 		});
-		this.wrapper.subscribe.userJoinRoom(async ({ user }) => {
+		this.wrapper.subscribe.userJoinRoom(({ user }) => {
 			const useR = new User(this, user);
-			await this.emit('userJoin', useR);
+			this.emit('userJoin', useR);
 			this.users.set(useR.id, useR);
 		});
-		this.wrapper.subscribe.userLeaveRoom(
-			async ({ userId, roomId }) =>
-				await this.emit('userLeave', [this.users.get(userId), this.rooms.get(roomId)]),
+		this.wrapper.subscribe.userLeaveRoom(({ userId, roomId }) =>
+			this.emit('userLeave', this.users.get(userId), this.rooms.get(roomId)),
 		);
-		this.wrapper.subscribe.handRaised(
-			async ({ userId }) => await this.emit('handRaised', this.users.get(userId)),
-		);
+		this.wrapper.subscribe.handRaised(({ userId }) => this.emit('handRaised', this.users.get(userId)));
 		this.wrapper.subscribe.invitationToRoom(async (data) => await this.emit('invite', data));
 		this.token = token;
 		this.refreshToken = refreshToken;
@@ -147,7 +148,7 @@ export class Client extends EventEmitter<{
 		rooms.forEach((room) => {
 			this.rooms.set(room.id, new Room(this, room));
 		});
-		await this.emit('ready', this);
+		this.emit('ready');
 	}
 
 	/**
@@ -267,39 +268,3 @@ export class Client extends EventEmitter<{
 		this._immediates.delete(immediate);
 	}
 }
-
-/**
- * Emitted when the client is ready.
- * @event Client#ready
- * @param {Client} eventData - The data.
- */
-
-/**
- * Emitted when a user joins a room.
- * @event Client#joinRoom
- * @param {Room} eventData - The data.
- */
-
-/**
- * Emitted when the bot recieves a message.
- * @event Client#message
- * @param {Message} eventData - The message.
- */
-
-/**
- * Emitted when a user leaves a room.
- * @event Client#leaveRoom
- * @param {Array<(User & Room)|undefined>} eventData - The user and the room.
- */
-
-/**
- * Emitted when a user raises his/her hand.
- * @event Client#handRaised
- * @param {User|undefined} eventData - The user.
- */
-
-/**
- * Emitted when a user invites you to a room.
- * @event Client#invite
- * @param {InvitationToRoomResponse} eventData - The data.
- */

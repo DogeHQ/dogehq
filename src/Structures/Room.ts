@@ -157,7 +157,7 @@ export class Room {
 	public async leaveRoom(): Promise<string> {
 		const { roomId } = await this.client.wrapper.mutation.leaveRoom();
 
-		await this.client.emit('userLeave', [this.client.user ?? undefined, this]);
+		this.client.emit('leaveRoom', this);
 
 		return roomId;
 	}
@@ -170,7 +170,7 @@ export class Room {
 			this.id,
 		)) as JoinRoomAndGetInfoResponse;
 
-		await this.client.emit('joinRoom', this);
+		this.client.emit('userJoin', this.client.user ?? undefined);
 		for (const user of users) this.client.users.set(user.id, new User(this.client, user));
 	}
 

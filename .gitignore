@@ -18,3 +18,10 @@ dist
 typings
 docs
 test/config.js
+
+# yarn v2
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
