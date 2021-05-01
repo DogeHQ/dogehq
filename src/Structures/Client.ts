@@ -20,6 +20,11 @@ export interface BotCredentials {
 	username: string;
 }
 
+export interface ClientOptions {
+	apiUrl?: string;
+	fetchTimeout?: number;
+}
+
 export interface ClientEvents {
 	ready: () => void;
 	userJoin: (user?: User) => void;
@@ -36,6 +41,7 @@ export interface ClientEvents {
 /**
  * The main client class.
  * @extends {EventEmitter}
+ * @param {ClientOptions|undefined} options - The client options.
  * @example ```js
  * const { Client } = require('dogehq');
  * const client = new Client();
@@ -63,6 +69,12 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 	 * @type {Set<NodeJS.Immediate>}
 	 */
 	private readonly _immediates = new Set<NodeJS.Immediate>();
+
+	/**
+	 * The client options that you set.
+	 * @type {ClientOptions}
+	 */
+	private readonly _options?: ClientOptions;
 
 	/**
 	 * The raw connection.
@@ -106,8 +118,10 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 	 */
 	public user!: ClientUser | null;
 
-	public constructor() {
+	public constructor(options?: ClientOptions) {
 		super();
+
+		this._options = options;
 	}
 
 	/**
@@ -136,7 +150,8 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 				this.emit('error', err);
 				throw err;
 			},
-			url: baseUrl,
+			url: this._options?.apiUrl ?? baseUrl,
+			fetchTimeout: this._options?.fetchTimeout,
 		});
 		this.user = new ClientUser(this);
 		this.rooms = new Collection<string, Room>();

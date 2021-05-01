@@ -53,5 +53,10 @@
 		"typedoc": "^0.20.36",
 		"typedoc-plugin-pages-fork": "^0.0.1",
 		"typescript": "^4.2.4"
+	},
+	"optionalDependencies": {
+		"audio-loader": "^1.0.3",
+		"mediasoup-client": "^3.6.30",
+		"wrtc": "^0.4.7"
 	}
 }

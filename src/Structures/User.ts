@@ -1,4 +1,4 @@
-import { User as UserInfo, Room as RoomInfo, RoomUser } from '@dogehouse/kebab';
+import { User as UserInfo, RoomUser, Room as RoomInfo } from '@dogehouse/kebab';
 import { Client } from './Client';
 
 export type UUID = string;
