@@ -4,3 +4,4 @@ public/
 .github/workflows
 .yarn/
 .github/dependabot.yml
+.yarnrc.yml

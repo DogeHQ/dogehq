@@ -6,8 +6,9 @@
 	<p>
 		<a href="https://www.npmjs.com/package/dogehq"><img src="https://img.shields.io/npm/v/dogehq.svg?maxAge=3600" alt="NPM version" /></a>
 		<a href="https://www.npmjs.com/package/dogehq"><img src="https://img.shields.io/npm/dt/dogehq?maxAge=3600" alt="NPM downloads" /></a>
-		<a href="https://david-dm.org/DogeHQ/dogehq"><img src="https://david-dm.org/DogeHQ/dogehq/status.svg?maxAge=3600" alt="Dependencies" /></a>
+		<a href="https://depfu.com/github/DogeHQ/dogehq?project_id=24947"><img src="https://badges.depfu.com/badges/7de66ce03153feabfbf0ac791eddc0b6/overview.svg" alt="Dependencies" /></a>
 		<a href="https://prettier.io"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="Prettier" /></a>
+		<a href="https://depfu.com"><img src="https://badges.depfu.com/badges/7de66ce03153feabfbf0ac791eddc0b6/status.svg" alt="Prettier" /></a>
 		<br />
 		<a href="https://github.com/DogeHQ/dogehq"><img src="https://github.com/DogeHQ/dogehq/actions/workflows/lint.yml/badge.svg" alt="ESLint" /></a>
 		<a href="https://github.com/DogeHQ/dogehq"><img src="https://github.com/DogeHQ/dogehq/actions/workflows/docs.yml/badge.svg" alt="Docs" /></a>
