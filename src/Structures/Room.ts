@@ -1,5 +1,4 @@
 import { stringToToken, Room as RoomInfo, JoinRoomAndGetInfoResponse } from '@dogehouse/kebab';
-import { AudioClient } from './AudioClient';
 import { Collection } from './Collection';
 import { Client } from './Client';
 import { User } from './User';
@@ -84,8 +83,6 @@ export class Room {
 	 */
 	public users: Collection<string, User>;
 
-	public audio: AudioClient;
-
 	public constructor(client: Client, room: RoomInfo) {
 		this.client = client;
 
@@ -99,7 +96,6 @@ export class Room {
 		this.creatorId = room.creatorId;
 		this.insertedAt = room.inserted_at;
 		this.users = new Collection();
-		this.audio = new AudioClient(client);
 
 		this._setUsers();
 	}

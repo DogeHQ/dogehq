@@ -1,3 +1,6 @@
+// make promises safe
+import 'make-promises-safe';
+
 // Base Structures
 export * from './Structures/Client';
 export * from './Structures/Collection';

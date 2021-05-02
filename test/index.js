@@ -8,9 +8,7 @@ client.on('ready', async () => {
 
 	const room = client.rooms.get('83c02ec8-8893-448c-a334-acfe9429bd12');
 
-	room.askToSpeak();
-	room.audio.play('https://upload.wikimedia.org/wikipedia/en/3/34/XO_TOUR_Llif3.ogg');
-
+	room.send(';');
 	console.log('ready');
 });
 

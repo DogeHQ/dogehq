@@ -3,8 +3,8 @@ import { TypedEventEmitter } from '../Util/TypedEmitter';
 import { baseUrl } from '../Util/Constants';
 import { Collection } from './Collection';
 import { ClientUser } from './ClientUser';
-import { Message } from './Message';
 import EventEmitter from 'eventemitter3';
+import { Message } from './Message';
 import { Room } from './Room';
 import { User } from './User';
 

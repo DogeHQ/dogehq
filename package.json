@@ -37,7 +37,8 @@
 	],
 	"dependencies": {
 		"@dogehouse/kebab": "^0.2.8",
-		"eventemitter3": "^4.0.7"
+		"eventemitter3": "^4.0.7",
+		"make-promises-safe": "^5.1.0"
 	},
 	"devDependencies": {
 		"@types/node": "^15.0.1",
@@ -53,10 +54,5 @@
 		"typedoc": "^0.20.36",
 		"typedoc-plugin-pages-fork": "^0.0.1",
 		"typescript": "^4.2.4"
-	},
-	"optionalDependencies": {
-		"audio-loader": "^1.0.3",
-		"mediasoup-client": "^3.6.30",
-		"wrtc": "^0.4.7"
 	}
 }
