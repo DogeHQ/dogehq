@@ -15,6 +15,7 @@
 		"outDir": "dist",
 		"esModuleInterop": true,
 		"downlevelIteration": true,
-		"typeRoots": ["types"]
+		"typeRoots": ["types"],
+		"resolveJsonModule": true
 	}
 }

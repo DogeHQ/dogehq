@@ -11,6 +11,7 @@ export * from './Structures/ScheduledRoom';
 export * from './Structures/Message';
 
 // Utils
+export const version = '1.7.0';
 export * from './Util/Constants';
 export * from './Util/Util';
 export * from './Util/TypedEmitter';

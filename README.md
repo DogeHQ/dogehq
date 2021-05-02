@@ -7,6 +7,7 @@
 		<a href="https://www.npmjs.com/package/dogehq"><img src="https://img.shields.io/npm/v/dogehq.svg?maxAge=3600" alt="NPM version" /></a>
 		<a href="https://www.npmjs.com/package/dogehq"><img src="https://img.shields.io/npm/dt/dogehq?maxAge=3600" alt="NPM downloads" /></a>
 		<a href="https://david-dm.org/Shukaaku/dogehq"><img src="https://david-dm.org/Shukaaku/dogehq/status.svg?maxAge=3600" alt="Dependencies" /></a>
+		<a href="https://prettier.io"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="Prettier" /></a>
 	</p>
 	<p>
 		<a href="https://nodei.co/npm/dogehq/"><img src="https://nodei.co/npm/dogehq.png?downloads=true&stars=true" alt="NPM info" /></a>

@@ -36,6 +36,8 @@ export interface ClientEvents {
 	leaveRoom: (room: Room) => void;
 	raw: (data: string) => void;
 	error: (error: Error) => void;
+	speakerAdd: (user?: User) => void;
+	speakerRemove: (user?: User) => void;
 }
 
 /**
@@ -169,7 +171,11 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 			this.emit('userLeave', this.users.get(userId), this.rooms.get(roomId)),
 		);
 		this.wrapper.subscribe.handRaised(({ userId }) => this.emit('handRaised', this.users.get(userId)));
-		this.wrapper.subscribe.invitationToRoom(async (data) => await this.emit('invite', data));
+		this.wrapper.subscribe.invitationToRoom((data) => this.emit('invite', data));
+		this.wrapper.subscribe.speakerAdded(({ userId }) => this.emit('speakerAdd', this.users.get(userId)));
+		this.wrapper.subscribe.speakerRemoved(({ userId }) =>
+			this.emit('speakerRemove', this.users.get(userId)),
+		);
 		this.token = token;
 		this.refreshToken = refreshToken;
 
