@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BotCredentials | dogehq</title>
+	<title>ClientOptions | dogehq</title>
 	<meta name="description" content="Documentation for dogehq">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,10 +57,10 @@
 					<a href="../modules.html">Globals</a>
 				</li>
 				<li>
-					<a href="botcredentials.html">BotCredentials</a>
+					<a href="clientoptions.html">ClientOptions</a>
 				</li>
 			</ul>
-			<h1>Interface BotCredentials</h1>
+			<h1>Interface ClientOptions</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">BotCredentials</span>
+						<span class="target">ClientOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -82,9 +82,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="botcredentials.html#accesstoken" class="tsd-kind-icon">access<wbr>Token</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="botcredentials.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="botcredentials.html#username" class="tsd-kind-icon">username</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientoptions.html#apiurl" class="tsd-kind-icon">api<wbr>Url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="clientoptions.html#fetchtimeout" class="tsd-kind-icon">fetch<wbr>Timeout</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,32 +92,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="accesstoken" class="tsd-anchor"></a>
-					<h3>access<wbr>Token</h3>
-					<div class="tsd-signature tsd-kind-icon">access<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="apiurl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> api<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Client.ts#L18">src/Structures/Client.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Client.ts#L24">src/Structures/Client.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="refreshtoken" class="tsd-anchor"></a>
-					<h3>refresh<wbr>Token</h3>
-					<div class="tsd-signature tsd-kind-icon">refresh<wbr>Token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="fetchtimeout" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> fetch<wbr>Timeout</h3>
+					<div class="tsd-signature tsd-kind-icon">fetch<wbr>Timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Client.ts#L19">src/Structures/Client.ts:19</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="username" class="tsd-anchor"></a>
-					<h3>username</h3>
-					<div class="tsd-signature tsd-kind-icon">username<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Client.ts#L20">src/Structures/Client.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Client.ts#L25">src/Structures/Client.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -164,30 +153,27 @@
 					<li class=" tsd-kind-class">
 						<a href="../classes/user.html" class="tsd-kind-icon">User</a>
 					</li>
+					<li class=" tsd-kind-interface">
+						<a href="botcredentials.html" class="tsd-kind-icon">Bot<wbr>Credentials</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="clientevents.html" class="tsd-kind-icon">Client<wbr>Events</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="botcredentials.html" class="tsd-kind-icon">Bot<wbr>Credentials</a>
+						<a href="clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="botcredentials.html#accesstoken" class="tsd-kind-icon">access<wbr>Token</a>
+								<a href="clientoptions.html#apiurl" class="tsd-kind-icon">api<wbr>Url</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="botcredentials.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="botcredentials.html#username" class="tsd-kind-icon">username</a>
+								<a href="clientoptions.html#fetchtimeout" class="tsd-kind-icon">fetch<wbr>Timeout</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="clientevents.html" class="tsd-kind-icon">Client<wbr>Events</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="collectionconstructor.html" class="tsd-kind-icon">Collection<wbr>Constructor</a>
 					</li>

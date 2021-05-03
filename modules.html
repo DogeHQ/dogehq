@@ -85,6 +85,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/botcredentials.html" class="tsd-kind-icon">Bot<wbr>Credentials</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/clientevents.html" class="tsd-kind-icon">Client<wbr>Events</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/collectionconstructor.html" class="tsd-kind-icon">Collection<wbr>Constructor</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/createbotresponse.html" class="tsd-kind-icon">Create<wbr>Bot<wbr>Response</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/profiledata.html" class="tsd-kind-icon">Profile<wbr>Data</a></li>
@@ -107,12 +108,18 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable"><a href="modules.html#authurl" class="tsd-kind-icon">auth<wbr>Url</a></li>
 								<li class="tsd-kind-variable"><a href="modules.html#baseurl" class="tsd-kind-icon">base<wbr>Url</a></li>
+								<li class="tsd-kind-variable"><a href="modules.html#version" class="tsd-kind-icon">version</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function"><a href="modules.html#isiso" class="tsd-kind-icon">is<wbr>Iso</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#tocodeblock" class="tsd-kind-icon">to<wbr>Code<wbr>Block</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#toemote" class="tsd-kind-icon">to<wbr>Emote</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#tolink" class="tsd-kind-icon">to<wbr>Link</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#tomention" class="tsd-kind-icon">to<wbr>Mention</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 							</ul>
 						</section>
 					</div>
@@ -126,7 +133,7 @@
 					<div class="tsd-signature tsd-kind-icon">Arguments&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">infer </span> U<span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> ? </span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> extends </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> ? </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> : </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Util/TypedEmitter.ts#L2">src/Util/TypedEmitter.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/TypedEmitter.ts#L2">src/Util/TypedEmitter.ts:2</a></li>
 						</ul>
 					</aside>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -142,7 +149,7 @@
 					<div class="tsd-signature tsd-kind-icon">Edit<wbr>Response<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>room<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RoomInfo</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L12">src/Structures/Room.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L12">src/Structures/Room.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -152,7 +159,7 @@
 					<div class="tsd-signature tsd-kind-icon">People<wbr>Preview<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>displayName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>numFollowers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L6">src/Structures/Room.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L6">src/Structures/Room.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -162,7 +169,7 @@
 					<div class="tsd-signature tsd-kind-icon">UUID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/User.ts#L4">src/Structures/User.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/User.ts#L4">src/Structures/User.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -175,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">auth<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;https://api.dogehouse.tv/bot/auth&quot;</span><span class="tsd-signature-symbol"> = &#x27;https://api.dogehouse.tv/bot/auth&#x27;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Util/Constants.ts#L11">src/Util/Constants.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/Constants.ts#L11">src/Util/Constants.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -190,7 +197,7 @@
 					<div class="tsd-signature tsd-kind-icon">base<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;wss://api.dogehouse.tv/socket&quot;</span><span class="tsd-signature-symbol"> = &#x27;wss://api.dogehouse.tv/socket&#x27;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Util/Constants.ts#L5">src/Util/Constants.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/Constants.ts#L5">src/Util/Constants.ts:5</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -198,6 +205,16 @@
 							<p>The base WS url.</p>
 						</div>
 					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="version" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> version</h3>
+					<div class="tsd-signature tsd-kind-icon">version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;1.7.0&quot;</span><span class="tsd-signature-symbol"> = &#x27;1.7.0&#x27;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/index.ts#L14">src/index.ts:14</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -212,7 +229,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Util/Util.ts#L8">src/Util/Util.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/Util.ts#L8">src/Util/Util.ts:8</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -231,6 +248,166 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p>If its ISO formatted.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="tocodeblock" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Code<wbr>Block</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Code<wbr>Block<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CodeBlockToken</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/MessageBuilder.ts#L44">src/Util/MessageBuilder.ts:44</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a string to a codeblock!</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The text to convert.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CodeBlockToken</span></h4>
+							<p>The token.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="toemote" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Emote</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Emote<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EmoteToken</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/MessageBuilder.ts#L35">src/Util/MessageBuilder.ts:35</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a string to an emote!</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The text to convert.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">EmoteToken</span></h4>
+							<p>The token.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="tolink" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Link</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Link<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">LinkToken</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/MessageBuilder.ts#L26">src/Util/MessageBuilder.ts:26</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a string to a link!</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The text to convert.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">LinkToken</span></h4>
+							<p>The token.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="tomention" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Mention</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Mention<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MentionToken</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/MessageBuilder.ts#L8">src/Util/MessageBuilder.ts:8</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a string to a mention!</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The text to convert.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">MentionToken</span></h4>
+							<p>The token.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">TextToken</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Util/MessageBuilder.ts#L17">src/Util/MessageBuilder.ts:17</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a string to a token!</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The text to convert.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">TextToken</span></h4>
+							<p>The token.</p>
 						</li>
 					</ul>
 				</section>
@@ -286,6 +463,9 @@
 						<a href="interfaces/clientevents.html" class="tsd-kind-icon">Client<wbr>Events</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/collectionconstructor.html" class="tsd-kind-icon">Collection<wbr>Constructor</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -321,8 +501,26 @@
 					<li class=" tsd-kind-variable">
 						<a href="modules.html#baseurl" class="tsd-kind-icon">base<wbr>Url</a>
 					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#version" class="tsd-kind-icon">version</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="modules.html#isiso" class="tsd-kind-icon">is<wbr>Iso</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#tocodeblock" class="tsd-kind-icon">to<wbr>Code<wbr>Block</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#toemote" class="tsd-kind-icon">to<wbr>Emote</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#tolink" class="tsd-kind-icon">to<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#tomention" class="tsd-kind-icon">to<wbr>Mention</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
 					</li>
 				</ul>
 			</nav>

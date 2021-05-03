@@ -105,10 +105,12 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#client" class="tsd-kind-icon">client</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#creatorid" class="tsd-kind-icon">creator<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#deafs" class="tsd-kind-icon">deafs</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#description" class="tsd-kind-icon">description</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#insertedat" class="tsd-kind-icon">inserted<wbr>At</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#isprivate" class="tsd-kind-icon">is<wbr>Private</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#mutes" class="tsd-kind-icon">mutes</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#name" class="tsd-kind-icon">name</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#peoplecount" class="tsd-kind-icon">people<wbr>Count</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="room.html#peoplepreviewlist" class="tsd-kind-icon">people<wbr>Preview<wbr>List</a></li>
@@ -152,7 +154,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L84">src/Structures/Room.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L96">src/Structures/Room.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -177,7 +179,7 @@
 					<div class="tsd-signature tsd-kind-icon">client<span class="tsd-signature-symbol">:</span> <a href="client.html" class="tsd-signature-type">Client</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L24">src/Structures/Room.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L24">src/Structures/Room.ts:24</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -192,7 +194,7 @@
 					<div class="tsd-signature tsd-kind-icon">creator<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L66">src/Structures/Room.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L66">src/Structures/Room.ts:66</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -202,12 +204,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="deafs" class="tsd-anchor"></a>
+					<h3>deafs</h3>
+					<div class="tsd-signature tsd-kind-icon">deafs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L96">src/Structures/Room.ts:96</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The list of deafened users.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="description" class="tsd-anchor"></a>
 					<h3>description</h3>
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L30">src/Structures/Room.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L30">src/Structures/Room.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -222,7 +239,7 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L36">src/Structures/Room.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L36">src/Structures/Room.ts:36</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -237,7 +254,7 @@
 					<div class="tsd-signature tsd-kind-icon">inserted<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L78">src/Structures/Room.ts:78</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L78">src/Structures/Room.ts:78</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -252,7 +269,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Private<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L48">src/Structures/Room.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L48">src/Structures/Room.ts:48</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -262,12 +279,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="mutes" class="tsd-anchor"></a>
+					<h3>mutes</h3>
+					<div class="tsd-signature tsd-kind-icon">mutes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L90">src/Structures/Room.ts:90</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The list of muted users.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="name" class="tsd-anchor"></a>
 					<h3>name</h3>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L42">src/Structures/Room.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L42">src/Structures/Room.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -282,7 +314,7 @@
 					<div class="tsd-signature tsd-kind-icon">people<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L54">src/Structures/Room.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L54">src/Structures/Room.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -297,7 +329,7 @@
 					<div class="tsd-signature tsd-kind-icon">people<wbr>Preview<wbr>List<span class="tsd-signature-symbol">:</span> <a href="../modules.html#peoplepreview" class="tsd-signature-type">PeoplePreview</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L72">src/Structures/Room.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L72">src/Structures/Room.ts:72</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -312,7 +344,7 @@
 					<div class="tsd-signature tsd-kind-icon">users<span class="tsd-signature-symbol">:</span> <a href="collection.html" class="tsd-signature-type">Collection</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="user.html" class="tsd-signature-type">User</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L84">src/Structures/Room.ts:84</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L84">src/Structures/Room.ts:84</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -327,7 +359,7 @@
 					<div class="tsd-signature tsd-kind-icon">voice<wbr>Server<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L60">src/Structures/Room.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L60">src/Structures/Room.ts:60</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -349,7 +381,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L243">src/Structures/Room.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L257">src/Structures/Room.ts:257</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -371,7 +403,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L149">src/Structures/Room.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L163">src/Structures/Room.ts:163</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -402,7 +434,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L115">src/Structures/Room.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L129">src/Structures/Room.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -424,7 +456,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L190">src/Structures/Room.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L204">src/Structures/Room.ts:204</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -458,7 +490,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L210">src/Structures/Room.ts:210</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L224">src/Structures/Room.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -489,7 +521,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L235">src/Structures/Room.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L249">src/Structures/Room.ts:249</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -523,7 +555,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L181">src/Structures/Room.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L195">src/Structures/Room.ts:195</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -554,7 +586,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L202">src/Structures/Room.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L216">src/Structures/Room.ts:216</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -606,7 +638,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L123">src/Structures/Room.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L137">src/Structures/Room.ts:137</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -637,7 +669,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L168">src/Structures/Room.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L182">src/Structures/Room.ts:182</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -659,7 +691,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L157">src/Structures/Room.ts:157</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L171">src/Structures/Room.ts:171</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -676,13 +708,13 @@
 					<a name="send" class="tsd-anchor"></a>
 					<h3>send</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">send<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, whisperedTo<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">send<span class="tsd-signature-symbol">(</span>tokens<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MessageToken</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span>, whisperedTo<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L108">src/Structures/Room.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L122">src/Structures/Room.ts:122</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -693,9 +725,9 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<h5>tokens: <span class="tsd-signature-type">MessageToken</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The message you wanna send.</p>
+										<p>The message tokens.</p>
 									</div>
 								</li>
 								<li>
@@ -716,7 +748,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L141">src/Structures/Room.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L155">src/Structures/Room.ts:155</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -748,7 +780,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L132">src/Structures/Room.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L146">src/Structures/Room.ts:146</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -780,7 +812,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L218">src/Structures/Room.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L232">src/Structures/Room.ts:232</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -811,7 +843,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/80d99c1/src/Structures/Room.ts#L226">src/Structures/Room.ts:226</a></li>
+									<li>Defined in <a href="https://github.com/DogeHQ/dogehq/blob/d0b15d0/src/Structures/Room.ts#L240">src/Structures/Room.ts:240</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -880,6 +912,9 @@
 								<a href="room.html#creatorid" class="tsd-kind-icon">creator<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="room.html#deafs" class="tsd-kind-icon">deafs</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="room.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -890,6 +925,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="room.html#isprivate" class="tsd-kind-icon">is<wbr>Private</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="room.html#mutes" class="tsd-kind-icon">mutes</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="room.html#name" class="tsd-kind-icon">name</a>
@@ -971,6 +1009,9 @@
 						<a href="../interfaces/clientevents.html" class="tsd-kind-icon">Client<wbr>Events</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="../interfaces/clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="../interfaces/collectionconstructor.html" class="tsd-kind-icon">Collection<wbr>Constructor</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1006,8 +1047,26 @@
 					<li class=" tsd-kind-variable">
 						<a href="../modules.html#baseurl" class="tsd-kind-icon">base<wbr>Url</a>
 					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../modules.html#version" class="tsd-kind-icon">version</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="../modules.html#isiso" class="tsd-kind-icon">is<wbr>Iso</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#tocodeblock" class="tsd-kind-icon">to<wbr>Code<wbr>Block</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#toemote" class="tsd-kind-icon">to<wbr>Emote</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#tolink" class="tsd-kind-icon">to<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#tomention" class="tsd-kind-icon">to<wbr>Mention</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
 					</li>
 				</ul>
 			</nav>
