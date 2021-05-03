@@ -4,7 +4,7 @@ WORKDIR /dogehq
 
 COPY . /
 
-RUN ls -la && \
+RUN ls -la / && \
         yarn && \
 	npm i -g http-server && \
         yarn docs
