@@ -41,7 +41,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^12.1.1":
+"@commitlint/cli@npm:12.1.2":
   version: 12.1.2
   resolution: "@commitlint/cli@npm:12.1.2"
   dependencies:
@@ -60,7 +60,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^12.1.1":
+"@commitlint/config-conventional@npm:12.1.2":
   version: 12.1.2
   resolution: "@commitlint/config-conventional@npm:12.1.2"
   dependencies:
@@ -151,7 +151,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/prompt-cli@npm:^12.1.1":
+"@commitlint/prompt-cli@npm:12.1.2":
   version: 12.1.2
   resolution: "@commitlint/prompt-cli@npm:12.1.2"
   dependencies:
@@ -350,7 +350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^26.0.23":
+"@types/jest@npm:26.0.23":
   version: 26.0.23
   resolution: "@types/jest@npm:26.0.23"
   dependencies:
@@ -374,7 +374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^15.0.1":
+"@types/node@npm:*, @types/node@npm:15.0.1":
   version: 15.0.1
   resolution: "@types/node@npm:15.0.1"
   checksum: 4e4fb69394efb224272ad7c6b6dc16a381b97e46a8f3c21d33fec51ef13a4d635f571b446d127eae333ea6a763f304b787f4b3f73e24e1f3b05a21b481900dfb
@@ -427,7 +427,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.22.0":
+"@typescript-eslint/eslint-plugin@npm:4.22.0":
   version: 4.22.0
   resolution: "@typescript-eslint/eslint-plugin@npm:4.22.0"
   dependencies:
@@ -465,7 +465,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.22.0":
+"@typescript-eslint/parser@npm:4.22.0":
   version: 4.22.0
   resolution: "@typescript-eslint/parser@npm:4.22.0"
   dependencies:
@@ -1036,27 +1036,27 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dogehq@workspace:."
   dependencies:
-    "@commitlint/cli": ^12.1.1
-    "@commitlint/config-conventional": ^12.1.1
-    "@commitlint/prompt-cli": ^12.1.1
+    "@commitlint/cli": 12.1.2
+    "@commitlint/config-conventional": 12.1.2
+    "@commitlint/prompt-cli": 12.1.2
     "@dogehouse/kebab": ^0.3.0
-    "@types/jest": ^26.0.23
-    "@types/node": ^15.0.1
-    "@typescript-eslint/eslint-plugin": ^4.22.0
-    "@typescript-eslint/parser": ^4.22.0
-    eslint: ^7.25.0
-    eslint-config-marine: ^8.3.2
-    eslint-config-prettier: ^8.3.0
-    eslint-plugin-prettier: ^3.4.0
+    "@types/jest": 26.0.23
+    "@types/node": 15.0.1
+    "@typescript-eslint/eslint-plugin": 4.22.0
+    "@typescript-eslint/parser": 4.22.0
+    eslint: 7.25.0
+    eslint-config-marine: 8.3.2
+    eslint-config-prettier: 8.3.0
+    eslint-plugin-prettier: 3.4.0
     eventemitter3: ^4.0.7
-    husky: ^6.0.0
+    husky: 6.0.0
     make-promises-safe: ^5.1.0
-    pinst: ^2.0.0
-    prettier: ^2.2.1
-    rimraf: ^3.0.2
-    typedoc: ^0.20.36
-    typedoc-plugin-pages-fork: ^0.0.1
-    typescript: ^4.2.4
+    pinst: 2.1.6
+    prettier: 2.2.1
+    rimraf: 3.0.2
+    typedoc: 0.20.36
+    typedoc-plugin-pages-fork: 0.0.1
+    typescript: 4.2.4
   languageName: unknown
   linkType: soft
 
@@ -1115,7 +1115,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-marine@npm:^8.3.2":
+"eslint-config-marine@npm:8.3.2":
   version: 8.3.2
   resolution: "eslint-config-marine@npm:8.3.2"
   dependencies:
@@ -1124,7 +1124,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.3.0":
+"eslint-config-prettier@npm:8.3.0":
   version: 8.3.0
   resolution: "eslint-config-prettier@npm:8.3.0"
   peerDependencies:
@@ -1135,7 +1135,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^3.4.0":
+"eslint-plugin-prettier@npm:3.4.0":
   version: 3.4.0
   resolution: "eslint-plugin-prettier@npm:3.4.0"
   dependencies:
@@ -1183,7 +1183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.25.0":
+"eslint@npm:7.25.0":
   version: 7.25.0
   resolution: "eslint@npm:7.25.0"
   dependencies:
@@ -1673,7 +1673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^6.0.0":
+"husky@npm:6.0.0":
   version: 6.0.0
   resolution: "husky@npm:6.0.0"
   bin:
@@ -2466,7 +2466,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinst@npm:^2.0.0":
+"pinst@npm:2.1.6":
   version: 2.1.6
   resolution: "pinst@npm:2.1.6"
   dependencies:
@@ -2493,7 +2493,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.2.1":
+"prettier@npm:2.2.1":
   version: 2.2.1
   resolution: "prettier@npm:2.2.1"
   bin:
@@ -2722,7 +2722,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^3.0.2":
+"rimraf@npm:3.0.2, rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
   dependencies:
@@ -3167,7 +3167,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-pages-fork@npm:^0.0.1":
+"typedoc-plugin-pages-fork@npm:0.0.1":
   version: 0.0.1
   resolution: "typedoc-plugin-pages-fork@npm:0.0.1"
   dependencies:
@@ -3177,7 +3177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.20.36":
+"typedoc@npm:0.20.36":
   version: 0.20.36
   resolution: "typedoc@npm:0.20.36"
   dependencies:
@@ -3200,7 +3200,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-typescript@^4.2.4:
+typescript@4.2.4:
   version: 4.2.4
   resolution: "typescript@npm:4.2.4"
   bin:
@@ -3210,7 +3210,7 @@ typescript@^4.2.4:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.2.4#builtin<compat/typescript>":
+"typescript@patch:typescript@4.2.4#builtin<compat/typescript>":
   version: 4.2.4
   resolution: "typescript@patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"
   bin:
