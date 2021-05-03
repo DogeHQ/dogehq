@@ -1,10 +1,11 @@
-FROM node:14
+FROM node:buster
 
 WORKDIR /dogehq
 
 COPY . /
 
-RUN yarn && \
+RUN ls -la /
+        yarn && \
 	npm i -g http-server && \
         yarn docs
 
