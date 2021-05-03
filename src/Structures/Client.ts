@@ -3,8 +3,8 @@ import { TypedEventEmitter } from '../Util/TypedEmitter';
 import { baseUrl } from '../Util/Constants';
 import { Collection } from './Collection';
 import { ClientUser } from './ClientUser';
-import { Message } from './Message';
 import EventEmitter from 'eventemitter3';
+import { Message } from './Message';
 import { Room } from './Room';
 import { User } from './User';
 
@@ -20,6 +20,11 @@ export interface BotCredentials {
 	username: string;
 }
 
+export interface ClientOptions {
+	apiUrl?: string;
+	fetchTimeout?: number;
+}
+
 export interface ClientEvents {
 	ready: () => void;
 	userJoin: (user?: User) => void;
@@ -31,11 +36,14 @@ export interface ClientEvents {
 	leaveRoom: (room: Room) => void;
 	raw: (data: string) => void;
 	error: (error: Error) => void;
+	speakerAdd: (user?: User) => void;
+	speakerRemove: (user?: User) => void;
 }
 
 /**
  * The main client class.
  * @extends {EventEmitter}
+ * @param {ClientOptions|undefined} options - The client options.
  * @example ```js
  * const { Client } = require('dogehq');
  * const client = new Client();
@@ -63,6 +71,12 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 	 * @type {Set<NodeJS.Immediate>}
 	 */
 	private readonly _immediates = new Set<NodeJS.Immediate>();
+
+	/**
+	 * The client options that you set.
+	 * @type {ClientOptions}
+	 */
+	private readonly _options?: ClientOptions;
 
 	/**
 	 * The raw connection.
@@ -106,8 +120,10 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 	 */
 	public user!: ClientUser | null;
 
-	public constructor() {
+	public constructor(options?: ClientOptions) {
 		super();
+
+		this._options = options;
 	}
 
 	/**
@@ -136,7 +152,8 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 				this.emit('error', err);
 				throw err;
 			},
-			url: baseUrl,
+			url: this._options?.apiUrl ?? baseUrl,
+			fetchTimeout: this._options?.fetchTimeout,
 		});
 		this.user = new ClientUser(this);
 		this.rooms = new Collection<string, Room>();
@@ -154,7 +171,11 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 			this.emit('userLeave', this.users.get(userId), this.rooms.get(roomId)),
 		);
 		this.wrapper.subscribe.handRaised(({ userId }) => this.emit('handRaised', this.users.get(userId)));
-		this.wrapper.subscribe.invitationToRoom(async (data) => await this.emit('invite', data));
+		this.wrapper.subscribe.invitationToRoom((data) => this.emit('invite', data));
+		this.wrapper.subscribe.speakerAdded(({ userId }) => this.emit('speakerAdd', this.users.get(userId)));
+		this.wrapper.subscribe.speakerRemoved(({ userId }) =>
+			this.emit('speakerRemove', this.users.get(userId)),
+		);
 		this.token = token;
 		this.refreshToken = refreshToken;
 

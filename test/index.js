@@ -4,8 +4,11 @@ const { Client } = require('../dist/index');
 const client = new Client();
 
 client.on('ready', async () => {
-	await client.rooms.first().join();
+	await client.user.joinRoom('83c02ec8-8893-448c-a334-acfe9429bd12');
 
+	const room = client.rooms.get('83c02ec8-8893-448c-a334-acfe9429bd12');
+
+	room.send(';');
 	console.log('ready');
 });
 

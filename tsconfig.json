@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"lib": ["DOM", "ES6"],
 		"strict": true,
 		"module": "commonjs",
 		"moduleResolution": "node",
@@ -7,13 +8,14 @@
 		"removeComments": false,
 		"alwaysStrict": true,
 		"pretty": true,
-		"target": "es2017",
+		"target": "es6",
 		"sourceMap": true,
 		"inlineSources": true,
 		"rootDir": "src",
 		"outDir": "dist",
 		"esModuleInterop": true,
 		"downlevelIteration": true,
-		"importHelpers": true
+		"typeRoots": ["types"],
+		"resolveJsonModule": true
 	}
 }

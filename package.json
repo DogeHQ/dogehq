@@ -1,6 +1,6 @@
 {
 	"name": "dogehq",
-	"version": "1.6.1",
+	"version": "1.7.0",
 	"description": "A wrapper for the DogeHouse Kebab API Client.",
 	"main": "./dist/index.js",
 	"types": "./dist/",
@@ -26,32 +26,42 @@
 	},
 	"license": "Apache-2.0",
 	"scripts": {
-		"docs": "rimraf public && typedoc",
+		"docs": "rimraf public && typedoc --options typedoc.json",
 		"build": "tsc",
 		"lint": "eslint . --fix",
 		"prettier": "prettier . --write",
-		"test": "node test/index.js"
+		"test": "node test/index.js",
+		"postinstall": "husky install",
+		"prepublishOnly": "pinst --disable",
+		"postpublish": "pinst --enable",
+		"merge": "git pull origin dev && git add . && git commit -m \"chore(deploy): Merge dev -> main\" && git checkout main && git merge dev && git push origin main --force && git checkout dev"
 	},
 	"files": [
 		"dist"
 	],
 	"dependencies": {
-		"@dogehouse/kebab": "^0.2.8",
-		"eventemitter3": "^4.0.7"
+		"@dogehouse/kebab": "^0.3.0",
+		"eventemitter3": "^4.0.7",
+		"make-promises-safe": "^5.1.0"
 	},
 	"devDependencies": {
-		"@types/node": "^15.0.1",
-		"@typescript-eslint/eslint-plugin": "^4.22.0",
-		"@typescript-eslint/parser": "^4.22.0",
-		"eslint": "^7.25.0",
-		"eslint-config-marine": "^8.3.2",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-prettier": "^3.4.0",
-		"prettier": "^2.2.1",
-		"rimraf": "^3.0.2",
-		"tslib": "^2.2.0",
-		"typedoc": "^0.20.36",
-		"typedoc-plugin-pages-fork": "^0.0.1",
-		"typescript": "^4.2.4"
+		"@commitlint/cli": "12.1.2",
+		"@commitlint/config-conventional": "12.1.2",
+		"@commitlint/prompt-cli": "12.1.2",
+		"@types/jest": "26.0.23",
+		"@types/node": "15.0.1",
+		"@typescript-eslint/eslint-plugin": "4.22.0",
+		"@typescript-eslint/parser": "4.22.0",
+		"eslint": "7.25.0",
+		"eslint-config-marine": "8.3.2",
+		"eslint-config-prettier": "8.3.0",
+		"eslint-plugin-prettier": "3.4.0",
+		"husky": "6.0.0",
+		"pinst": "2.1.6",
+		"prettier": "2.2.1",
+		"rimraf": "3.0.2",
+		"typedoc": "0.20.36",
+		"typedoc-plugin-pages-fork": "0.0.1",
+		"typescript": "4.2.4"
 	}
 }
