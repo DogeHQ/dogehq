@@ -40,7 +40,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"@dogehouse/kebab": "^0.2.8",
+		"@dogehouse/kebab": "^0.3.0",
 		"eventemitter3": "^4.0.7",
 		"make-promises-safe": "^5.1.0"
 	},
