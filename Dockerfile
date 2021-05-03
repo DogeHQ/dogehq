@@ -2,9 +2,9 @@ FROM node:buster
 
 WORKDIR /dogehq
 
-COPY . /
+COPY . /dogehq
 
-RUN ls -la / && \
+RUN ls -la /dogehq && \
         yarn && \
 	npm i -g http-server && \
         yarn docs
