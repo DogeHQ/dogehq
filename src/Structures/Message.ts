@@ -1,4 +1,5 @@
-import { Message as MessageInfo, tokensToString, stringToToken } from '@dogehouse/kebab';
+import { Message as MessageInfo, tokensToString } from '@dogehouse/kebab';
+import { toMention, toString } from '../Util/MessageBuilder';
 import { User, UUID } from './User';
 import { Client } from './Client';
 
@@ -80,9 +81,10 @@ export class Message {
 	 * @param {string} content - The content.
 	 */
 	public async reply(content: string): Promise<void> {
-		await this.client.wrapper.mutation.sendRoomChatMsg(
-			stringToToken(`@${this.author.displayName} , ${content}`),
-		);
+		await this.client.wrapper.mutation.sendRoomChatMsg([
+			toMention(`@${this.author.username}`),
+			toString(`, ${content}`),
+		]);
 	}
 
 	/**

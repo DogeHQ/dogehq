@@ -1,7 +1,7 @@
-import { stringToToken, Room as RoomInfo, JoinRoomAndGetInfoResponse } from '@dogehouse/kebab';
+import { Room as RoomInfo, JoinRoomAndGetInfoResponse, CurrentRoom, MessageToken } from '@dogehouse/kebab';
 import { Collection } from './Collection';
+import { User, UUID } from './User';
 import { Client } from './Client';
-import { User } from './User';
 
 export type PeoplePreview = Array<{
 	id: string;
@@ -83,6 +83,18 @@ export class Room {
 	 */
 	public users: Collection<string, User>;
 
+	/**
+	 * The list of muted users.
+	 * @type {Record<UUID, boolean>}
+	 */
+	public mutes: Record<UUID, boolean>;
+
+	/**
+	 * The list of deafened users.
+	 * @type {Record<UUID, boolean>}
+	 */
+	public deafs: Record<UUID, boolean>;
+
 	public constructor(client: Client, room: RoomInfo) {
 		this.client = client;
 
@@ -96,17 +108,19 @@ export class Room {
 		this.creatorId = room.creatorId;
 		this.insertedAt = room.inserted_at;
 		this.users = new Collection();
+		this.mutes = (client.user?.currentRoom as CurrentRoom).muteMap;
+		this.deafs = (client.user?.currentRoom as CurrentRoom).deafMap;
 
 		this._setUsers();
 	}
 
 	/**
 	 * Sends a message to the room.
-	 * @param {string} message - The message you wanna send.
+	 * @param {MessageToken[]} tokens - The message tokens.
 	 * @param {string[]} [whisperedTo] - An array of usernames to whisper.
 	 */
-	public async send(message: string, whisperedTo?: string[]): Promise<void> {
-		await this.client.wrapper.mutation.sendRoomChatMsg(stringToToken(message), whisperedTo);
+	public async send(tokens: MessageToken[], whisperedTo?: string[]): Promise<void> {
+		await this.client.wrapper.mutation.sendRoomChatMsg(tokens, whisperedTo);
 	}
 
 	/**
