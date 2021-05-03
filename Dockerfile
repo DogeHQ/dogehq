@@ -2,7 +2,7 @@ FROM node:14
 
 WORKDIR /dogehq
 
-COPY ["package.json", "yarn.lock", "./"]
+COPY . /
 
 RUN yarn && \
 	npm i -g http-server && \
