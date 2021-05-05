@@ -13,7 +13,8 @@ export const isIso = (str: string): boolean => isoRegex.test(str);
  * @param {Function} structure The class.
  * @param {Function} c The class.
  */
-export const applyToClass = (props: string[], structure: Function, c: Function): void => { // eslint-disable-line
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const applyToClass = (props: string[], structure: Function, c: Function): void => {
 	for (const prop of props) {
 		Object.defineProperty(
 			structure.prototype,

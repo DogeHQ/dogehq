@@ -6,8 +6,6 @@
   "projectOwner": "DogeHQ",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#contributors)",
-  "contributorTemplate": "<a href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"\"/><br /><sub><b><%= contributor.name %></b></sub></a>",
   "imageSize": 100,
   "commit": false,
   "contributorsPerLine": 7,
@@ -20,6 +18,24 @@
       "profile": "https://renovate.whitesourcesoftware.com/",
       "contributions": [
         "infra"
+      ]
+    },
+    {
+      "login": "fuwwy",
+      "name": "Checkium",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9268058?v=4",
+      "profile": "https://github.com/fuwwy",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "FrostyTheDumDum",
+      "name": "Frosty!",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75714323?v=4",
+      "profile": "https://github.com/FrostyTheDumDum",
+      "contributions": [
+        "maintenance"
       ]
     }
   ],

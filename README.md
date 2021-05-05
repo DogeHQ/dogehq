@@ -35,6 +35,7 @@ npm i dogehq --no-optional --production
 ```
 
 > With voice support
+
 ```bash
 npm i dogehq --production
 ```
@@ -68,6 +69,7 @@ client.login('token', 'accessToken');
 5. Submit a pull request :D
 
 ## Credits
+
 - [@discordjs/collection](https://npmjs.com/package/@discordjs/collection)
 - [@fuwwy](https://github.com/fuwwy)
 - [@dogehouse/kebab](https://npmjs.com/package/@dogehouse/kebab)
@@ -80,12 +82,15 @@ Authored and maintained by 1chiSensei.
 > GitHub [@1chiSensei](https://github.com/1chiSensei)
 
 ## Contributors
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://renovate.whitesourcesoftware.com/"><img src="https://avatars.githubusercontent.com/u/25180681?v=4" width="100px;" alt=""/><br /><sub><b>WhiteSource Renovate</b></sub></a></td>
+    <td align="center"><a href="https://renovate.whitesourcesoftware.com/"><img src="https://avatars.githubusercontent.com/u/25180681?v=4?s=100" width="100px;" alt=""/><br /><sub><b>WhiteSource Renovate</b></sub></a><br /><a href="#infra-renovate-bot" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/fuwwy"><img src="https://avatars.githubusercontent.com/u/9268058?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Checkium</b></sub></a><br /><a href="https://github.com/DogeHQ/dogehq/commits?author=fuwwy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/FrostyTheDumDum"><img src="https://avatars.githubusercontent.com/u/75714323?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Frosty!</b></sub></a><br /><a href="#maintenance-FrostyTheDumDum" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 

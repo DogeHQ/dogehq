@@ -321,7 +321,8 @@ export class AudioDispatcher extends Writable implements VolumeInterface {
 	 * @param {BufferEncoding} enc The encoding.
 	 * @param {Function} done The done function.
 	 */
-	public _write(chunk: Buffer, enc: BufferEncoding, done: () => void): void { // eslint-disable-line
+	public _write(chunk: Buffer, enc: BufferEncoding, done: () => void): void {
+		// eslint-disable-line
 		if (!this.startTime) {
 			this.emit('start');
 
