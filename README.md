@@ -78,3 +78,8 @@ client.login('token', 'accessToken');
 Authored and maintained by 1chiSensei.
 
 > GitHub [@1chiSensei](https://github.com/1chiSensei)
+
+## Contributors
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->

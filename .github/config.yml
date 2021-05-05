@@ -1,0 +1,5 @@
+requestInfoReplyComment: >
+  Hey there! You didn't give us enough information about this issue or pull request.
+  We would love it if you'd provide us more information!
+  
+requestInfoLabelToAdd: 'needs more info'
