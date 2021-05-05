@@ -1,0 +1,12 @@
+{
+	"files": ["README.md"],
+	"projectName": "dogehq",
+	"projectOwner": "DogeHQ",
+  	"repoType": "github",
+  	"repoHost": "https://github.com",
+	"imageSize": 100,
+  	"commit": false,
+	"contributorsPerLine": 7,
+  	"skipCi": true,
+	"contributors": []
+}
