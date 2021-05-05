@@ -6,3 +6,19 @@ const isoRegex = /\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:
  * @returns {boolean} If its ISO formatted.
  */
 export const isIso = (str: string): boolean => isoRegex.test(str);
+
+/**
+ * Apply the given properties to the class.
+ * @param {string[]} props The properties.
+ * @param {Function} structure The class.
+ * @param {Function} c The class.
+ */
+export const applyToClass = (props: string[], structure: Function, c: Function): void => { // eslint-disable-line
+	for (const prop of props) {
+		Object.defineProperty(
+			structure.prototype,
+			prop,
+			Object.getOwnPropertyDescriptor(c.prototype, prop) as PropertyDescriptor,
+		);
+	}
+};

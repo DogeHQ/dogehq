@@ -31,7 +31,12 @@
 ## Install
 
 ```bash
-yarn add dogehq
+npm i dogehq --no-optional --production
+```
+
+> With voice support
+```bash
+npm i dogehq --production
 ```
 
 ## Documentation
@@ -61,6 +66,11 @@ client.login('token', 'accessToken');
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
+
+## Credits
+- [@discordjs/collection](https://npmjs.com/package/@discordjs/collection)
+- [@fuwwy](https://github.com/fuwwy)
+- [@dogehouse/kebab](https://npmjs.com/package/@dogehouse/kebab)
 
 ## Author
 

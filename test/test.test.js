@@ -1,14 +1,18 @@
 const { token, refreshToken } = require('./config');
+const ytdl = require('ytdl-core-discord');
 const { Client } = require('../dist/index');
 
 const client = new Client();
 
 client.on('ready', async () => {
-	await client.user.joinRoom('83c02ec8-8893-448c-a334-acfe9429bd12');
+	await client.user.joinRoom('07812173-030b-41ef-89cd-9f0fab6f9536');
 
-	const room = client.rooms.get('83c02ec8-8893-448c-a334-acfe9429bd12');
+	const room = client.rooms.get('07812173-030b-41ef-89cd-9f0fab6f9536');
 
-	room.send(';');
+	room.askToSpeak();
+	await room.connectToAudio();
+	room.audioConnection.play(ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ'), { type: 'opus' });
+
 	console.log('ready');
 });
 

@@ -30,7 +30,7 @@
 		"build": "tsc",
 		"lint": "eslint . --fix",
 		"prettier": "prettier . --write",
-		"test": "node test/index.js",
+		"test": "node test/test.test.js",
 		"postinstall": "husky install",
 		"prepublishOnly": "pinst --disable",
 		"postpublish": "pinst --enable",
@@ -39,10 +39,15 @@
 	"files": [
 		"dist"
 	],
+	"engines": {
+		"node": ">=12.0.0"
+	},
 	"dependencies": {
+		"@discordjs/collection": "^0.1.6",
 		"@dogehouse/kebab": "^0.3.0",
 		"eventemitter3": "^4.0.7",
-		"make-promises-safe": "^5.1.0"
+		"make-promises-safe": "^5.1.0",
+		"ytdl-core-discord": "^1.3.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "12.1.2",
@@ -50,8 +55,10 @@
 		"@commitlint/prompt-cli": "12.1.2",
 		"@types/jest": "26.0.23",
 		"@types/node": "15.0.1",
+		"@types/wrtc": "1chiSensei/wrtc-types",
 		"@typescript-eslint/eslint-plugin": "4.22.0",
 		"@typescript-eslint/parser": "4.22.0",
+		"all-contributors-cli": "^6.20.0",
 		"eslint": "7.25.0",
 		"eslint-config-marine": "8.3.2",
 		"eslint-config-prettier": "8.3.0",
@@ -63,5 +70,11 @@
 		"typedoc": "0.20.36",
 		"typedoc-plugin-pages-fork": "0.0.1",
 		"typescript": "4.2.4"
+	},
+	"optionalDependencies": {
+		"@discordjs/opus": "^0.5.0",
+		"mediasoup-client": "^3.6.30",
+		"prism-media": "^1.2.9",
+		"wrtc": "^0.4.7"
 	}
 }

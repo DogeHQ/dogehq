@@ -16,6 +16,7 @@
 		"esModuleInterop": true,
 		"downlevelIteration": true,
 		"typeRoots": ["types"],
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"declarationMap": true
 	}
 }

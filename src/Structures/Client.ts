@@ -1,4 +1,5 @@
-import { raw, wrap, Wrapper, InvitationToRoomResponse, http } from '@dogehouse/kebab';
+import { raw, wrap, Wrapper, InvitationToRoomResponse, http, audioWrap } from '@dogehouse/kebab';
+import { AudioConnectionOptions } from './Voice/Connection';
 import { TypedEventEmitter } from '../Util/TypedEmitter';
 import { baseUrl } from '../Util/Constants';
 import { Collection } from './Collection';
@@ -7,12 +8,6 @@ import EventEmitter from 'eventemitter3';
 import { Message } from './Message';
 import { Room } from './Room';
 import { User } from './User';
-
-export interface CreateBotResponse {
-	apiKey: string | null;
-	isUsernameTaken: boolean | null;
-	error: string | null;
-}
 
 export interface BotCredentials {
 	accessToken: string;
@@ -120,10 +115,22 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 	 */
 	public user!: ClientUser | null;
 
+	/**
+	 * The voice data cache.
+	 * @type {AudioConnectionOptions}
+	 */
+	public voiceDataCache: AudioConnectionOptions;
+
+	/**
+	 * The audio wrapper.
+	 */
+	public audioWrapper!: ReturnType<typeof audioWrap>;
+
 	public constructor(options?: ClientOptions) {
 		super();
 
 		this._options = options;
+		this.voiceDataCache = {};
 	}
 
 	/**
@@ -140,7 +147,7 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 			},
 			logger: (direction, opcode, _, fetchId, raw) => {
 				const directionPadded = direction.toUpperCase().padEnd(3, ' ');
-				const fetchIdInfo = fetchId ? ` (fetch id ${fetchId})` : '';
+				const fetchIdInfo = fetchId ? ` (addListener id ${fetchId})` : '';
 
 				this.emit('raw', `${directionPadded} "${opcode}"${fetchIdInfo}: ${raw ?? ''}`);
 			},
@@ -159,6 +166,7 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 		this.rooms = new Collection<string, Room>();
 		this.users = new Collection<string, User>();
 		this.wrapper = wrap(this.connection);
+		this.audioWrapper = audioWrap(this.connection);
 		this.wrapper.subscribe.newChatMsg((data) => {
 			this.emit('message', new Message(this, data.msg));
 		});
@@ -172,9 +180,31 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 		);
 		this.wrapper.subscribe.handRaised(({ userId }) => this.emit('handRaised', this.users.get(userId)));
 		this.wrapper.subscribe.invitationToRoom((data) => this.emit('invite', data));
-		this.wrapper.subscribe.speakerAdded(({ userId }) => this.emit('speakerAdd', this.users.get(userId)));
-		this.wrapper.subscribe.speakerRemoved(({ userId }) =>
-			this.emit('speakerRemove', this.users.get(userId)),
+		this.wrapper.subscribe.speakerAdded(({ userId }) => {
+			const user = this.users.get(userId);
+			this.emit('speakerAdd', user);
+			const room = this.rooms.get(user?.currentRoomId || '');
+			room?.speakers.set(user?.id || '', user as User);
+		});
+		this.wrapper.subscribe.speakerRemoved(({ userId }) => {
+			const user = this.users.get(userId);
+			this.emit('speakerRemove', user);
+			const room = this.rooms.get(user?.currentRoomId || '');
+			room?.speakers.delete(user?.id || '');
+		});
+		this.audioWrapper.subscribe.youBecameSpeaker(
+			({ sendTransportOptions }) => (this.voiceDataCache.sendTransportOptions = sendTransportOptions),
+		);
+		this.audioWrapper.subscribe.youJoinedAsPeer(({ recvTransportOptions, routerRtpCapabilities }) => {
+			this.voiceDataCache.recvTransportOptions = recvTransportOptions;
+			this.voiceDataCache.routerRtpCapabilities = routerRtpCapabilities;
+		});
+		this.audioWrapper.subscribe.youJoinedAsSpeaker(
+			({ recvTransportOptions, routerRtpCapabilities, sendTransportOptions }) => {
+				this.voiceDataCache.recvTransportOptions = recvTransportOptions;
+				this.voiceDataCache.routerRtpCapabilities = routerRtpCapabilities;
+				this.voiceDataCache.sendTransportOptions = sendTransportOptions;
+			},
 		);
 		this.token = token;
 		this.refreshToken = refreshToken;
@@ -193,7 +223,7 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 	 * @returns {Promise<string|null>} The api key.
 	 */
 	public async createBot(username: string): Promise<string | null> {
-		const data = (await this.wrapper.mutation.userCreateBot(username)) as CreateBotResponse;
+		const data = await this.wrapper.mutation.userCreateBot(username);
 
 		if (data.isUsernameTaken) throw new Error(`The username "${username}" is taken`);
 
@@ -227,6 +257,14 @@ export class Client extends ((EventEmitter as any) as new () => TypedEventEmitte
 		this._timeouts.clear();
 		this._intervals.clear();
 		this._immediates.clear();
+	}
+
+	/**
+	 * Sets whether the bot is speaking or not.
+	 * @param {boolean} value If the bot should speak.
+	 */
+	public setSpeaking(value: boolean): void {
+		this.connection.send('room:set_active_speaker', { active: value });
 	}
 
 	/**

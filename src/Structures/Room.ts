@@ -1,4 +1,5 @@
 import { Room as RoomInfo, JoinRoomAndGetInfoResponse, CurrentRoom, MessageToken } from '@dogehouse/kebab';
+import { AudioConnection } from './Voice/Connection';
 import { Collection } from './Collection';
 import { User, UUID } from './User';
 import { Client } from './Client';
@@ -85,15 +86,23 @@ export class Room {
 
 	/**
 	 * The list of muted users.
-	 * @type {Record<UUID, boolean>}
+	 * @type {?Record<UUID, boolean>}
 	 */
-	public mutes: Record<UUID, boolean>;
+	public mutes: Record<UUID, boolean> | null;
 
 	/**
 	 * The list of deafened users.
-	 * @type {Record<UUID, boolean>}
+	 * @type {?Record<UUID, boolean>}
 	 */
-	public deafs: Record<UUID, boolean>;
+	public deafs: Record<UUID, boolean> | null;
+
+	/**
+	 * The audio connection.
+	 * @type {?AudioConnection}
+	 */
+	public audioConnection!: AudioConnection | null;
+
+	public speakers: Collection<string, User>;
 
 	public constructor(client: Client, room: RoomInfo) {
 		this.client = client;
@@ -108,8 +117,15 @@ export class Room {
 		this.creatorId = room.creatorId;
 		this.insertedAt = room.inserted_at;
 		this.users = new Collection();
-		this.mutes = (client.user?.currentRoom as CurrentRoom).muteMap;
-		this.deafs = (client.user?.currentRoom as CurrentRoom).deafMap;
+		this.speakers = new Collection();
+
+		try {
+			this.mutes = (client.user?.currentRoom as CurrentRoom).muteMap;
+			this.deafs = (client.user?.currentRoom as CurrentRoom).deafMap;
+		} catch {
+			this.mutes = null;
+			this.deafs = null;
+		}
 
 		this._setUsers();
 	}
@@ -124,10 +140,23 @@ export class Room {
 	}
 
 	/**
-	 * Asks the room moderators to let the bot speak.
+	 * Connects to audio.
+	 * @returns {Promise<AudioConnection>} The audio connection.
 	 */
-	public askToSpeak(): void {
-		this.client.wrapper.mutation.askToSpeak();
+	public async connectToAudio(): Promise<AudioConnection> {
+		this.audioConnection =
+			this.audioConnection || new AudioConnection(this.client, this.client.voiceDataCache);
+
+		await this.audioConnection.connect();
+		return this.audioConnection;
+	}
+
+	/**
+	 * Asks the room moderators to let the bot speak.
+	 * @returns {Promise<void>}
+	 */
+	public askToSpeak(): Promise<void> {
+		return new Promise((resolve) => resolve(this.client.wrapper.mutation.askToSpeak()));
 	}
 
 	/**
