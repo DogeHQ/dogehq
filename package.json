@@ -31,7 +31,7 @@
 		"lint": "eslint . --fix",
 		"prettier": "prettier . --write",
 		"test": "node test/test.test.js",
-		"postinstall": "npx typescript && npx husky install",
+		"postinstall": "yarn build && npx husky install",
 		"prepublishOnly": "npx pinst --disable",
 		"postpublish": "npx pinst --enable",
 		"merge": "git pull origin dev && git add . && git commit -m \"chore(deploy): Merge dev -> main\" && git checkout main && git merge dev && git push origin main --force && git checkout dev",
