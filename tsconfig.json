@@ -15,7 +15,10 @@
 		"outDir": "dist",
 		"esModuleInterop": true,
 		"downlevelIteration": true,
-		"typeRoots": ["types"],
+		"typeRoots": [
+			"./types",
+			"./node_modules/@types"
+		],
 		"resolveJsonModule": true,
 		"declarationMap": true
 	}
