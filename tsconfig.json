@@ -20,6 +20,7 @@
 			"./node_modules/@types"
 		],
 		"resolveJsonModule": true,
-		"declarationMap": true
+		"declarationMap": true,
+		"skipLibCheck": true
 	}
 }
