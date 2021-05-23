@@ -48,7 +48,7 @@
 	},
 	"dependencies": {
 		"@discordjs/collection": "^0.1.6",
-		"@dogehouse/kebab": "^0.3.0",
+		"@dogehouse/kebab": "^1.0.0",
 		"eventemitter3": "^4.0.7",
 		"make-promises-safe": "^5.1.0",
 		"ytdl-core-discord": "^1.3.0"
