@@ -66,7 +66,7 @@
 		"eslint": "7.25.0",
 		"eslint-config-marine": "8.3.2",
 		"eslint-config-prettier": "8.3.0",
-		"eslint-plugin-prettier": "3.4.0",
+		"eslint-plugin-prettier": "3.4.1",
 		"husky": "6.0.0",
 		"pinst": "2.1.6",
 		"prettier": "2.2.1",
