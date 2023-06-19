@@ -69,7 +69,7 @@
 		"eslint-plugin-prettier": "3.4.0",
 		"husky": "6.0.0",
 		"pinst": "2.1.6",
-		"prettier": "2.2.1",
+		"prettier": "2.8.8",
 		"rimraf": "3.0.2",
 		"typedoc": "0.20.36",
 		"typedoc-plugin-pages-fork": "0.0.1",
